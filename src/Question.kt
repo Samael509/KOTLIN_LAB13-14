@@ -41,6 +41,29 @@ class Quiz : ProgressPrintable {
         val total: Int = 10
         var answered: Int = 3
     }
+
+    fun printQuiz(){
+        question1.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+
+        question2.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+
+        question3.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+    }
 }
 
 enum class Difficulty {
@@ -50,5 +73,5 @@ enum class Difficulty {
 }
 
 fun main(){
-    Quiz().printProgressBar()
+    Quiz().apply { printQuiz() }
 }
