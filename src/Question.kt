@@ -28,6 +28,16 @@ class Quiz {
     }
 }
 
+fun Quiz.StudentProgress.printProgressBar(){
+    repeat(Quiz.answered) {print("▓")}
+    repeat(Quiz.total - Quiz.answered) { print("▒") }
+    println()
+    println(Quiz.progressText)
+}
+
+val Quiz.StudentProgress.progressText: String
+    get() = "${answered} of ${total} answered"
+
 enum class Difficulty {
     EASY,
     MEDIUM,
@@ -35,5 +45,5 @@ enum class Difficulty {
 }
 
 fun main(){
-    println("${Quiz.answered} of ${Quiz.total} answered")
+    println(Quiz.printProgressBar())
 }
