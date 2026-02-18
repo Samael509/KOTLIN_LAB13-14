@@ -15,19 +15,20 @@ val newSolarSystem = arrayOf(
 )
 
 fun main() {
-    val solarSystem = mutableListOf(
-        "mercury", "venus", "earth", "mars", "jupiter",
-        "saturn", "uranus", "neptune"
+    val solarSystem = mutableMapOf(
+        "mercury" to 0,
+        "venus" to 0,
+        "earth" to 1,
+        "mars" to 2,
+        "jupiter" to 79,
+        "saturn" to 82,
+        "uranus" to 27,
+        "neptune" to 14
     )
-    solarSystem.add("pluto")
+    solarSystem["pluto"] = 5
     println(solarSystem.size)
-    println(solarSystem.contains("pluto"))
-    println("pluto" in solarSystem)
-    solarSystem.add("pluto")
-    println(solarSystem.size)
-    solarSystem.remove("pluto")
-    println(solarSystem.size)
-    println(solarSystem.contains("pluto"))
+    solarSystem["jupiter"] = 78
+    println(solarSystem["jupiter"])
 //    println(newSolarSystem.size)
 //    println(solarSystem[2])
 //    println(solarSystem.get(3))
