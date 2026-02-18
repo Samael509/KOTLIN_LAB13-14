@@ -47,11 +47,15 @@ val cookie = listOf(
 )
 
 fun main(){
-    val softBakedMenu = cookie.filter {
-        it.softBaked
+    val groupedMenu = cookie.groupBy { it.softBaked }
+    val softBakedMenu = groupedMenu[true] ?: emptyList()
+    val crunchyMenu = groupedMenu[false] ?: emptyList()
+    println("soft cookies:")
+    softBakedMenu.forEach {
+        println("${it.name} - $${it.price}")
     }
-    println("мягкое печенье:")
-    softBakedMenu.forEach{
+    println("crunchy cookies:")
+    crunchyMenu.forEach {
         println("${it.name} - $${it.price}")
     }
 }
